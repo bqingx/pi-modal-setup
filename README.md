@@ -6,7 +6,13 @@
 
 支持 Debian/Ubuntu Linux（glibc ≥ 2.28；自动 Node 安装支持 x86_64/aarch64）。以准备长期使用 Pi 的账号，在有交互终端的 VPS 登录会话执行。不要在当前正在运行 Pi 的账号下并发修改配置。
 
-固定版本下载命令将在发布后列于本节。也可审阅并下载本仓库 `install.sh`，运行 `bash install.sh`。`bash install.sh --help` 不需要 TTY。脚本支持 `curl | bash`，但推荐先下载、审阅再运行。
+在 Bash 中执行这一行（固定到已测试的不可变 commit；先下载临时文件再运行）：
+
+```bash
+(umask 077; f=$(mktemp) && trap 'rm -f "$f"' EXIT && curl -fL --proto '=https' https://raw.githubusercontent.com/bqingx/pi-modal-setup/37dfe6c3c7220fb3ce3e10dfa2ca99560796ebfc/install.sh -o "$f" && bash "$f")
+```
+
+该 raw URL 已实际验证 HTTP 200 且与本地脚本逐字节相同。`install.sh` SHA256：`890ad7504e1b49f557e410bf5ede1453b1180ab2f7db29ab83e8d9350f1e27f7`。如需先审阅，下载后查看脚本再 `bash install.sh`。`bash install.sh --help` 不需要 TTY。脚本也支持 `curl | bash`。
 
 系统需有 `bash python3 curl tar xz sha256sum`（常见 Debian/Ubuntu 镜像已包含；若缺少，会停止并提示用系统包管理器安装，不擅自提权）。例如缺少依赖时，由你决定执行 `sudo apt-get install python3 curl ca-certificates tar xz-utils coreutils` 后重试。
 
