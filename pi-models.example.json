@@ -7,7 +7,7 @@
       "authHeader": true,
       "models": [
         {
-          "id": "qwen38-27b-aggr:q5kp",
+          "id": "qwen38-27b:q5km",
           "name": "Qwen3.8 27B HauhauCS Q5_K_P (Modal L40S)",
           "reasoning": true,
           "input": [

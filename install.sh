@@ -35,14 +35,14 @@ export PI_CODING_AGENT_DIR="$agent"
 cat >"$work/config.py" <<'PY'
 import getpass, json, os, pathlib, sys, tempfile, time
 P = 'modal-heretic'
-MODEL = 'qwen38-27b-aggr:q5kp'
+MODEL = 'qwen38-27b:q5km'
 root = pathlib.Path(os.environ['PI_CODING_AGENT_DIR'])
 plan_path = pathlib.Path(sys.argv[2])
 names = ('models.json', 'settings.json', 'auth.json')
 provider = {
     'baseUrl': 'https://shelliminionhja33--heretic9b-persistent-api-gateway.us-east.modal.run/v1',
     'api': 'openai-completions', 'authHeader': True,
-    'models': [{'id': MODEL, 'name': 'Qwen3.8 27B HauhauCS Aggressive Q5_K_P (Modal L40S)',
+    'models': [{'id': MODEL, 'name': 'Qwen3.8 27B Q5_K_M (Modal L40S)',
         'reasoning': True, 'input': ['text'], 'contextWindow': 262144, 'maxTokens': 16384,
         'compat': {'supportsStore': False, 'supportsDeveloperRole': False,
                    'supportsReasoningEffort': True, 'maxTokensField': 'max_tokens'}}]}
@@ -218,5 +218,5 @@ else
 fi
 python3 "$work/config.py" commit "$work/plan.json"
 printf '\nReady. Run: %s\n' "$pi_cmd"
-printf 'Default: modal-heretic/qwen38-27b-aggr:q5kp\nCredential: %s/auth.json (0600)\n' "$agent"
+printf 'Default: modal-heretic/qwen38-27b:q5km\nCredential: %s/auth.json (0600)\n' "$agent"
 printf '%s\n' 'No API request was sent. Chat will cold-start the GPU and incur charges.'
