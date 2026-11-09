@@ -42,10 +42,10 @@ names = ('models.json', 'settings.json', 'auth.json')
 provider = {
     'baseUrl': 'https://shelliminionhja33--heretic9b-persistent-api-gateway.us-east.modal.run/v1',
     'api': 'openai-completions', 'authHeader': True,
-    'models': [{'id': MODEL, 'name': 'Heretic 9B Q4_K_M (Modal L4)',
-        'reasoning': True, 'input': ['text'], 'contextWindow': 262144, 'maxTokens': 4096,
+    'models': [{'id': MODEL, 'name': 'Qwen3.8 27B HauhauCS Aggressive Q5_K_P (Modal L40S)',
+        'reasoning': True, 'input': ['text'], 'contextWindow': 262144, 'maxTokens': 16384,
         'compat': {'supportsStore': False, 'supportsDeveloperRole': False,
-                   'supportsReasoningEffort': False, 'maxTokensField': 'max_tokens'}}]}
+                   'supportsReasoningEffort': True, 'maxTokensField': 'max_tokens'}}]}
 def die(msg):
     raise SystemExit('Error: ' + msg)
 def pairs(items):
