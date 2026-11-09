@@ -45,13 +45,13 @@ privacy/credential/modal_model_api → values.api_key
 ## 服务配置
 
 - Base URL: `https://shelliminionhja33--heretic9b-persistent-api-gateway.us-east.modal.run/v1`
-- Provider: `modal-heretic`; model: `qwen38-27b:q5km`
-- OpenAI Chat Completions / Bearer auth / 原生 tools / 文本输入；context **262144**（256K，实测可用），max output **4096**，模型 `qwen38-27b:q5km`（Qwen3.8 27B Q5_K_M，L40S 48GB）。
+- Provider: `modal-heretic`; model: `qwen38-27b-aggr:q5kp`
+- OpenAI Chat Completions / Bearer auth / 原生 tools / 文本输入；context **262144**（256K，实测可用），max output **4096**，模型 `qwen38-27b-aggr:q5kp`（Qwen3.8 27B Q5_K_M，L40S 48GB）。
 - 模型可能内部 reasoning，但未验证可调 thinking，因此 `reasoning:false`。具体兼容字段见 `pi-models.example.json`。URL 不要再附 `/chat/completions`。
 - 首次 chat 会冷启动 GPU（可能数分钟）并收费。单请求并发，429 等前一请求结束再试；不要循环重试或自动保温。GPU idle 回收窗口约60秒仍计费，不承诺恰好60秒回收。服务拥有者需自行设 Modal 预算，安装器不设预算。
 - 示例 cost 不标零，避免把实际 GPU 服务冒充免费；Pi 账面 token cost 不能代替 Modal 账单。
 
-启动：在工作目录运行安装器输出的 `pi` 路径。新会话默认 `modal-heretic/qwen38-27b:q5km`。Pi 可执行工具；**工作目录不是安全沙箱**，不要用拥有生产密钥/钱包的账号试用，建议独立账号或完整容器隔离。
+启动：在工作目录运行安装器输出的 `pi` 路径。新会话默认 `modal-heretic/qwen38-27b-aggr:q5kp`。Pi 可执行工具；**工作目录不是安全沙箱**，不要用拥有生产密钥/钱包的账号试用，建议独立账号或完整容器隔离。
 
 ## 卸载 / 恢复
 
