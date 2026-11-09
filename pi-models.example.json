@@ -7,14 +7,14 @@
       "authHeader": true,
       "models": [
         {
-          "id": "heretic9b:q4km",
-          "name": "Heretic 9B Q4_K_M (Modal L4)",
-          "reasoning": false,
+          "id": "qwen38-27b:q5km",
+          "name": "Qwen3.8 27B Q5_K_M (Modal L40S)",
+          "reasoning": true,
           "input": [
             "text"
           ],
           "contextWindow": 262144,
-          "maxTokens": 2048,
+          "maxTokens": 4096,
           "compat": {
             "supportsStore": false,
             "supportsDeveloperRole": false,
