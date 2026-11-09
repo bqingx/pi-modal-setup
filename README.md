@@ -46,7 +46,7 @@ privacy/credential/modal_model_api → values.api_key
 
 - Base URL: `https://shelliminionhja33--heretic9b-persistent-api-gateway.us-east.modal.run/v1`
 - Provider: `modal-heretic`; model: `heretic9b:q4km`
-- OpenAI Chat Completions / Bearer auth / 原生 tools / 文本输入；context **16384**，max output **2048**。
+- OpenAI Chat Completions / Bearer auth / 原生 tools / 文本输入；context **262144**（256K，实测可用），max output **2048**。
 - 模型可能内部 reasoning，但未验证可调 thinking，因此 `reasoning:false`。具体兼容字段见 `pi-models.example.json`。URL 不要再附 `/chat/completions`。
 - 首次 chat 会冷启动 GPU（可能数分钟）并收费。单请求并发，429 等前一请求结束再试；不要循环重试或自动保温。GPU idle 回收窗口约60秒仍计费，不承诺恰好60秒回收。服务拥有者需自行设 Modal 预算，安装器不设预算。
 - 示例 cost 不标零，避免把实际 GPU 服务冒充免费；Pi 账面 token cost 不能代替 Modal 账单。

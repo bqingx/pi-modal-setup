@@ -43,7 +43,7 @@ provider = {
     'baseUrl': 'https://shelliminionhja33--heretic9b-persistent-api-gateway.us-east.modal.run/v1',
     'api': 'openai-completions', 'authHeader': True,
     'models': [{'id': MODEL, 'name': 'Heretic 9B Q4_K_M (Modal L4)',
-        'reasoning': False, 'input': ['text'], 'contextWindow': 16384, 'maxTokens': 2048,
+        'reasoning': False, 'input': ['text'], 'contextWindow': 262144, 'maxTokens': 2048,
         'compat': {'supportsStore': False, 'supportsDeveloperRole': False,
                    'supportsReasoningEffort': False, 'maxTokensField': 'max_tokens'}}]}
 def die(msg):

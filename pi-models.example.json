@@ -13,7 +13,7 @@
           "input": [
             "text"
           ],
-          "contextWindow": 16384,
+          "contextWindow": 262144,
           "maxTokens": 2048,
           "compat": {
             "supportsStore": false,
